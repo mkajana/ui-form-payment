@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./CreditCardForm.css";
 import mastercardLogo from "../../../images/mastercardLogo.png";
 
-
 interface CreditCardFormProps {
   name: string;
   onChangeName: () => void;
@@ -12,6 +11,8 @@ interface CreditCardFormProps {
   onChangeExpirationDate: () => void;
   cvv: string;
   onChangeCvv: () => void;
+  cardType: string;
+  onChangeCardType: () => void;
   onSubmit: () => void;
 }
 
@@ -43,6 +44,36 @@ const CreditCardForm = (props: CreditCardFormProps) => {
       <div className="form-container">
         <h1> Fill in your card details:</h1>
         <form onSubmit={props.onSubmit}>
+          <div className="type-container">
+            <p>Card Type:</p>
+
+            <div className="radio-label">
+              <div>
+                <input
+                  type="radio"
+                  name="cardType"
+                  value="mastercard"
+                  checked={props.cardType === "mastercard"}
+                  onChange={props.onChangeCardType}
+                />
+                <label htmlFor="mastercard">Mastercard</label>
+                <br />
+              </div>
+
+              <div>
+                <input
+                  type="radio"
+                  name="cardType"
+                  value="visa"
+                  checked={props.cardType === "visa"}
+                  onChange={props.onChangeCardType}
+                />
+                <label htmlFor="visa">Visa</label>
+                <br />
+              </div>
+            </div>
+          </div>
+
           <div className="input-style">
             <label htmlFor="name">Name on Card:</label>
             <input
