@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "./CreditCardForm.css";
 import mastercardLogo from "../../../images/mastercardLogo.png";
+import visaLogo from "../../../images/visaLogo.png"
 import cardBackgroundMasterCard from "../../../images/cardBackgroundMasterCard.png";
 import cardBackgroundVisa from "../../../images/cardBackgroundVisa.png";
+
 
 interface CreditCardFormProps {
   name: string;
@@ -19,20 +21,27 @@ interface CreditCardFormProps {
 }
 
 const CreditCardForm = (props: CreditCardFormProps) => {
+  const [cardType, setCardType] = useState("mastercard");
+
+  const onChangeCardType = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCardType(e.target.value);
+  };
+
   return (
+    
     <>
       <div
         className="card-container"
         style={{
           backgroundImage: `${
-            props.cardType === "visa"
+            cardType === "visa"
               ? `url(${cardBackgroundVisa})`
               : `url(${cardBackgroundMasterCard})`
           }`,
         }}
       >
         <div className="card-type">
-          <img src={mastercardLogo} alt="logo" className="logo-style" />
+          <img src={cardType ==="visa" ? visaLogo :  mastercardLogo} alt="logo" className="logo-style" />
         </div>
 
         <div className="card-number">
@@ -65,7 +74,7 @@ const CreditCardForm = (props: CreditCardFormProps) => {
                   name="cardType"
                   value="mastercard"
                   checked={props.cardType === "mastercard"}
-                  onChange={props.onChangeCardType}
+                  onChange={onChangeCardType}
                 />
                 <label htmlFor="mastercard">Mastercard</label>
                 <br />
@@ -77,7 +86,7 @@ const CreditCardForm = (props: CreditCardFormProps) => {
                   name="cardType"
                   value="visa"
                   checked={props.cardType === "visa"}
-                  onChange={props.onChangeCardType}
+                  onChange={onChangeCardType}
                 />
                 <label htmlFor="visa">Visa</label>
                 <br />
@@ -143,7 +152,13 @@ const CreditCardForm = (props: CreditCardFormProps) => {
               title="Your CVV should contain only numbers."
             />
           </div>
-          <button className="button-style" type="submit">
+          <button className="button-style" type="submit"  style={{
+          backgroundColor: `${
+            cardType === "visa"
+              ? "#6F1D1B"
+              :"#3423A6"
+          }`,
+        }}>
             Pay now
           </button>
         </form>
