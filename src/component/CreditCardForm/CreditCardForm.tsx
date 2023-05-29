@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./CreditCardForm.css";
 import mastercardLogo from "../../../images/mastercardLogo.png";
+import cardBackgroundMasterCard from "../../../images/cardBackgroundMasterCard.png";
+import cardBackgroundVisa from "../../../images/cardBackgroundVisa.png";
 
 interface CreditCardFormProps {
   name: string;
@@ -19,7 +21,16 @@ interface CreditCardFormProps {
 const CreditCardForm = (props: CreditCardFormProps) => {
   return (
     <>
-      <div className="card-container">
+      <div
+        className="card-container"
+        style={{
+          backgroundImage: `${
+            props.cardType === "visa"
+              ? `url(${cardBackgroundVisa})`
+              : `url(${cardBackgroundMasterCard})`
+          }`,
+        }}
+      >
         <div className="card-type">
           <img src={mastercardLogo} alt="logo" className="logo-style" />
         </div>
