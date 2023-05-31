@@ -1,10 +1,9 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import "./CreditCardForm.css";
 import mastercardLogo from "../../../images/mastercardLogo.png";
-import visaLogo from "../../../images/visaLogo.png"
+import visaLogo from "../../../images/visaLogo.png";
 import cardBackgroundMasterCard from "../../../images/cardBackgroundMasterCard.png";
 import cardBackgroundVisa from "../../../images/cardBackgroundVisa.png";
-
 
 interface CreditCardFormProps {
   name: string;
@@ -28,7 +27,6 @@ const CreditCardForm = (props: CreditCardFormProps) => {
   };
 
   return (
-    
     <>
       <div
         className="card-container"
@@ -41,11 +39,11 @@ const CreditCardForm = (props: CreditCardFormProps) => {
         }}
       >
         <div className="card-type">
-          <img src={require(cardType ==="visa" ? visaLogo :  mastercardLogo)} alt="logo" className="logo-style" />
-          <img src={visaLogo} alt="logo" className="logo-style" />
-          <img src={mastercardLogo} alt="logo" className="logo-style" />
-
-
+          <img
+            src={cardType === "visa" ? visaLogo : mastercardLogo}
+            alt="logo"
+            className="logo-style"
+          />
         </div>
 
         <div className="card-number">
@@ -81,7 +79,7 @@ const CreditCardForm = (props: CreditCardFormProps) => {
                   onChange={onChangeCardType}
                 />
                 <label htmlFor="mastercard">Mastercard</label>
-                <br /> 
+                <br />
               </div>
 
               <div>
@@ -156,13 +154,13 @@ const CreditCardForm = (props: CreditCardFormProps) => {
               title="Your CVV should contain only numbers."
             />
           </div>
-          <button className="button-style" type="submit"  style={{
-          backgroundColor: `${
-            cardType === "visa"
-              ? "#6F1D1B"
-              :"#3423A6"
-          }`,
-        }}>
+          <button
+            className="button-style"
+            type="submit"
+            style={{
+              backgroundColor: `${cardType === "visa" ? "#6F1D1B" : "#3423A6"}`,
+            }}
+          >
             Pay now
           </button>
         </form>
