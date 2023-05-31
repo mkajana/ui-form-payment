@@ -1,6 +1,6 @@
 {
   "name": "@mkajana/ui-form-payment",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A react component library",
   "scripts": {
     "rollup": "rollup -c",
@@ -12,6 +12,7 @@
   "license": "ISC",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^24.1.0",
+    "@rollup/plugin-image": "^3.0.2",
     "@rollup/plugin-node-resolve": "^15.0.2",
     "@rollup/plugin-typescript": "^11.1.0",
     "@storybook/addon-essentials": "^7.0.17",

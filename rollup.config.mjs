@@ -6,6 +6,7 @@ import packageJson from "./package.json" assert { type: "json" }; //we import pa
 import external from "rollup-plugin-peer-deps-external";
 import postcss from "rollup-plugin-postcss";
 import url from 'rollup-plugin-url';
+import image from "@rollup/plugin-image";
 
 
 export default [
@@ -31,6 +32,7 @@ export default [
       external(),
       postcss(), 
       url(),
+      image(),
 
 
     ], //node resolve plugin, and the other plugins (typescript plugin needs the specific directory)
