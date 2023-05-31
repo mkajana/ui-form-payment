@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState } from "react";
 import "./CreditCardForm.css";
 import mastercardLogo from "../../../images/mastercardLogo.png";
 import visaLogo from "../../../images/visaLogo.png"
@@ -77,7 +77,7 @@ const CreditCardForm = (props: CreditCardFormProps) => {
                   onChange={onChangeCardType}
                 />
                 <label htmlFor="mastercard">Mastercard</label>
-                <br />
+                <br /> 
               </div>
 
               <div>
