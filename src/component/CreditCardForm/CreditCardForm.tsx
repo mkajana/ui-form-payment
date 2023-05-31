@@ -41,7 +41,7 @@ const CreditCardForm = (props: CreditCardFormProps) => {
         }}
       >
         <div className="card-type">
-          <img src={cardType ==="visa" ? visaLogo :  mastercardLogo} alt="logo" className="logo-style" />
+          <img src={require(cardType ==="visa" ? visaLogo :  mastercardLogo)} alt="logo" className="logo-style" />
           <img src={visaLogo} alt="logo" className="logo-style" />
           <img src={mastercardLogo} alt="logo" className="logo-style" />
 
