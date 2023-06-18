@@ -5,9 +5,8 @@ import dts from "rollup-plugin-dts";
 import packageJson from "./package.json" assert { type: "json" }; //we import package.json so when we use commonjs modules
 import external from "rollup-plugin-peer-deps-external";
 import postcss from "rollup-plugin-postcss";
-import url from 'rollup-plugin-url';
+import url from "rollup-plugin-url";
 import image from "@rollup/plugin-image";
-
 
 export default [
   //first configuration object
@@ -30,11 +29,10 @@ export default [
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
       external(),
-      postcss(), 
+      postcss(),
       url(),
       image(),
-
-
+      copy({ targets: [{ src: "./images", dest: "./dist" }] }),
     ], //node resolve plugin, and the other plugins (typescript plugin needs the specific directory)
   },
 
@@ -45,6 +43,6 @@ export default [
       { file: "dist/index.d.ts", format: "esm", globals: { react: "React" } },
     ],
     plugins: [dts()],
-    external: ["react", "react-dom",/\.css$/ ],
+    external: ["react", "react-dom", /\.css$/],
   },
 ];
