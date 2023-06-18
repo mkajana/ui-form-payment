@@ -33,7 +33,7 @@ export default [
       postcss(),
       url(),
       image(),
-      copy({ targets: [{ src: "images/*", dest: "dist/cjs/*" }] }),
+      copy({ targets: [{ src: "images/*", dest: "dist/*" }] }),
     ], //node resolve plugin, and the other plugins (typescript plugin needs the specific directory)
   },
 
