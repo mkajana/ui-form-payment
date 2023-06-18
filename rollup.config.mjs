@@ -7,6 +7,7 @@ import external from "rollup-plugin-peer-deps-external";
 import postcss from "rollup-plugin-postcss";
 import url from "rollup-plugin-url";
 import image from "@rollup/plugin-image";
+import copy from "rollup-plugin-copy";
 
 export default [
   //first configuration object
