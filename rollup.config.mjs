@@ -3,10 +3,10 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import packageJson from "./package.json" assert { type: "json" }; //we import package.json so when we use commonjs modules
+import image from "@rollup/plugin-image";
 import external from "rollup-plugin-peer-deps-external";
 import postcss from "rollup-plugin-postcss";
 import url from "rollup-plugin-url";
-import image from "@rollup/plugin-image";
 import copy from "rollup-plugin-copy";
 
 export default [
