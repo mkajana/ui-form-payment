@@ -24,6 +24,10 @@ export const BasicCreditCard: Story = {
       expirationDate="11/12"
       cvv="123"
       onSubmit={() => console.log("martina")}
+      cardType={""}
+      onChangeCardType={function (): void {
+        throw new Error("Function not implemented.");
+      }}
     />
   ),
 };
@@ -40,6 +44,10 @@ export const ErrorState: Story = {
       expirationDate="11/12"
       cvv="123"
       onSubmit={() => console.log("onSubmit")}
+      cardType={""}
+      onChangeCardType={function (): void {
+        throw new Error("Function not implemented.");
+      }}
     />
   ),
 };
